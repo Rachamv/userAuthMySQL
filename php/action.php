@@ -1,6 +1,6 @@
 <?php
-include "userauth.php";
-include_once "../config.php";
+include 'userauth.php';
+include_once '../config.php';
 
 
 switch(true){
@@ -19,7 +19,7 @@ switch(true){
             $password = $_POST['password'];
         loginUser($email, $password);
         break;
-    case isset($_POST["reset"]):
+    case isset($_POST['reset']):
         $email = $_POST['email'];
         $password = $_POST['password'];
         resetPassword($email, $password);
@@ -27,11 +27,13 @@ switch(true){
     case isset($_POST['logout']):
         logout();
         break;
-    case isset($_POST["delete"]):
+    case isset($_POST['delete']):
         $id = $_POST['id'];
         deleteaccount($id);
         break;
-    case isset($_GET["all"]):
+    case isset($_GET['all']):
         getusers();
         break;
 }
+
+?>
